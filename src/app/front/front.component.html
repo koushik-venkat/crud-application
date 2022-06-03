@@ -1,0 +1,145 @@
+<!-- Image and text -->
+
+<nav class="navbar">
+  <h1 id="tit">Post It!</h1>
+</nav>
+
+<div class="bbooddyy">
+    
+  <p class="kemi">
+    Post It! is a simple webapp where you could post your content through posts.
+  </p>
+    <ul class="kemi">
+      User Guide:
+      <li>
+        Click the <strong>Add Post</strong> button to add the post. Fill the title and content of your post its all set for now to post!!!
+      </li>
+      <li>
+        Click the <strong>Get All Posts</strong> button to view the posts which were posted by you earlier.
+      </li>
+      <li>
+        Right under the section where you get all the posts you could find buttons for <strong>Update Post</strong> and <strong>Delete Post</strong> which enables you to update and delete respectively
+      </li>
+    </ul>
+</div>
+
+<div class="total">
+    <div class="mainbuttons" fxLayoutGap="75">
+
+
+        <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" mat-fab color="warn" aria-label="addpost" class="addpost" title="Create a Post"><mat-icon class="colorcolor">post_add</mat-icon></button>
+
+    <button type="button"  class="recieveallpost" data-toggle="modal" data-target="#exampleModalLong" mat-fab title="Show All Posts" color="warn" aria-label="recieveallposts" (click) = "onGet()"><mat-icon>call_received</mat-icon></button>
+
+
+    </div>
+
+
+</div>
+
+<div class="modal fade createapost" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel"><b>Create a Post</b></h1>
+          <button type="button" class="close btn btn-danger" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form >
+            <div class="form-group">
+              <label required for="recipient-name" class="col-form-label">Title</label>
+              <input required #inputele type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label required for="message-text" class="col-form-label">Content</label>
+              <textarea required  #content class="form-control" id="message-text"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success btn-lg" (click)=onCreate(inputele,content) >Create</button>
+            <button type="button" class="btn btn-danger btn-lg closemodalll" data-dismiss="modal"> Close</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLongTitle"><b>Get All Posts</b></h1>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <div *ngFor="let elee of data">
+            <div *ngFor="let ele of elee">
+
+                <div class="card container" style="width: 100%; align-content:space-around">
+                    <div class="card-body">
+                      <h1 class="card-title"><b>{{ele.title}}</b></h1>
+                      <h6 class="card-subtitle mb-2 text-muted"></h6>
+                      <p class="card-text">{{ele.content}}</p>
+                    </div>
+                    <div class="deletebutton">
+                        <button style="margin: 5px;" title="Delete the Post" class="deletepost" mat-fab color="warn" aria-label="deletepost" (click)="onDelete(ele.id)" ><mat-icon>delete_outline</mat-icon></button>
+                        <button
+                        
+                        type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateModal" 
+                        
+                      
+                        
+                        
+
+                        style="margin: 5px;" class="updatepost" title="Update the Post" mat-fab color="warn" aria-label="updatepost" (click)="storeid(ele.id)"><mat-icon>update</mat-icon></button>
+                    </div>
+                  </div>
+                  <br>
+            </div>
+            <!-- {{ele}} -->
+             
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-lg closegetallposts" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="modal modal-lg fade updateapost" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="updateModal"><b>Update a Post</b></h1>
+          <button type="button" class="close btn btn-danger" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form >
+            <div class="form-group">
+              <label required for="recipient-name" class="col-form-label">Title</label>
+              <input required #utitle   type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label required for="message-text" class="col-form-label">Content</label>
+              <textarea required #ucontent  class="form-control" id="message-text"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success btn-lg"(click)="onUpdate(ucontent,utitle)"  >Update</button>
+            <button type="button" class="btn btn-danger btn-lg closeupdatemodal" data-dismiss="modal"> Close</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="k.js"></script>
