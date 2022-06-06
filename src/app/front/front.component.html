@@ -4,9 +4,11 @@
   <h1 id="tit">Post It!</h1>
 </nav>
 
+
 <div class="bbooddyy">
     
   <p class="kemi">
+    
     Post It! is a simple webapp where you could post your content through posts.
   </p>
     <ul class="kemi">
@@ -21,6 +23,7 @@
         Right under the section where you get all the posts you could find buttons for <strong>Update Post</strong> and <strong>Delete Post</strong> which enables you to update and delete respectively
       </li>
     </ul>
+    <button  routerLink="/Login" class="btn btn-danger mx-2 d-flex" routerLink="/login">Log Out</button>
 </div>
 
 <div class="total">
@@ -28,10 +31,7 @@
 
 
         <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" mat-fab color="warn" aria-label="addpost" class="addpost" title="Create a Post"><mat-icon class="colorcolor">post_add</mat-icon></button>
-
     <button type="button"  class="recieveallpost" data-toggle="modal" data-target="#exampleModalLong" mat-fab title="Show All Posts" color="warn" aria-label="recieveallposts" (click) = "onGet()"><mat-icon>call_received</mat-icon></button>
-
-
     </div>
 
 

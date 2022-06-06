@@ -13,25 +13,23 @@
     margin-top:0px;
     display:flex;
     justify-content: center;
-    background-color:#2e2c2e;
+    background-color:#f7e4f3;
     /* width: 100%; */
     height:25%;
 }
 .kemi{
     padding-top: 2rem;
-    color:white;
+    color:rgb(0, 0, 0);
     margin: 2rem;
     margin-top: 0;
     font-size: 3rem;
     line-height: 5rem;
     /* font-weight:bolder; */
-    font-family: 'Cookie', cursive;
-font-family: 'Indie Flower', cursive;
-font-family: 'Satisfy', cursive;
+    font-family:cursive;
 }
 .bbooddyy{
     height:75%;
-    background-color:#2e2c2e;
+    background-color:#f7e4f3;
 }
 
  .mainbuttons{
@@ -63,7 +61,7 @@ font-family: 'Satisfy', cursive;
     /* width: 100%; */
     margin:0px;
     padding:0px;
-    background-color: #f5644b;
+    background-color: #afadb1;
 }
 b{
     margin:0px;
